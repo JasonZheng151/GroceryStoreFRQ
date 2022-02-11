@@ -20,11 +20,12 @@ public class GroceryStore
         ArrayList<Integer> stocked= new ArrayList<>();
         for(int i=0; i< productsStocked.length; i++)
         {
-            if(productsStocked[i].getQuantity()<min)
+            if(productsStocked[i].getQuantity()<=min)
             {
-                stocked.add()
+                stocked.add(i);
             }
         }
+        return stocked;
     }
 
     /** Returns true if all products named in shoppingList are available for purchase
@@ -34,6 +35,19 @@ public class GroceryStore
      */
     public boolean checkAvailability(ArrayList<String> shoppingList)
     {
-        /* to be implemented in part (b) */
+       for(String listItem: shoppingList)
+       {
+           for(Product product :  productsStocked)
+           {
+               if(product.getName().equals(listItem))
+               {
+                   if(product.getQuantity()==0)
+                   {
+                       return false;
+                   }
+               }
+           }
+       }
+       return true;
     }
 }
