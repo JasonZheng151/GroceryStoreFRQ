@@ -17,7 +17,14 @@ public class GroceryStore
      *  Precondition: min > 0 */
     public ArrayList<Integer> getReorderList(int min)
     {
-        /* to be implemented in part (a) */
+        ArrayList<Integer> stocked= new ArrayList<>();
+        for(int i=0; i< productsStocked.length; i++)
+        {
+            if(productsStocked[i].getQuantity()<min)
+            {
+                stocked.add()
+            }
+        }
     }
 
     /** Returns true if all products named in shoppingList are available for purchase
